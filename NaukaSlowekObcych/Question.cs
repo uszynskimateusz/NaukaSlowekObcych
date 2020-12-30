@@ -12,7 +12,7 @@ namespace NaukaSlowekObcych
         List<Word> answers = new List<Word>();
         int questionid;
         Level level;
-
+        //siema
 
         void Request() { }
     }
