@@ -20,6 +20,7 @@ namespace NaukaSlowekObcych
     /// </summary>
     public partial class MainWindow : Window
     {
+        //proba
         public MainWindow()
         {
             InitializeComponent();
