@@ -14,9 +14,18 @@ namespace NaukaSlowekObcych
         public Word (string polish, string english)
         {
 
-            polish = this.polish;
-            english = this.english;
+            this.polish = polish;
+            this.english = english;
         }
 
+        public String getPolish()
+        {
+            return polish;
+        }
+
+        public String getEnglish()
+        {
+            return english;
+        }
     }
 }
