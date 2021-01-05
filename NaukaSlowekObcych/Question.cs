@@ -23,10 +23,6 @@ namespace NaukaSlowekObcych
 
         void Request() { }
 
-        public void REF(IState state)
-        {
-            this.ChangeState(state);
-        }
 
         public void ChangeState(IState state)
         {

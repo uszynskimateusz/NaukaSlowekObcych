@@ -24,7 +24,10 @@ namespace NaukaSlowekObcych
         public MainWindow()
         {
             var question =new Question(new StateLearn());
+
+            question.ChangeState(new StateTest());
             InitializeComponent();
+
         }
     }
 }
