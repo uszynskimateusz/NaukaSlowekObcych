@@ -11,7 +11,7 @@ namespace NaukaSlowekObcych
 
         public override void GetPoint()
         {
-           
+          
         }
 
     }

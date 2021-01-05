@@ -23,6 +23,7 @@ namespace NaukaSlowekObcych
         //proba
         public MainWindow()
         {
+            var question =new Question(new StateLearn());
             InitializeComponent();
         }
     }
