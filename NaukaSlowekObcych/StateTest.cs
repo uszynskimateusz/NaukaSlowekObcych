@@ -10,7 +10,9 @@ namespace NaukaSlowekObcych
     {
         public override void GetPoint()
         {
-
+            //tu jesli if prawdziwy np slowo nauczone to wtedy stan sie zmieni
+            if(0>1)
+            this.question.SetQuestion(new StateLearn());
         }
     }
 }

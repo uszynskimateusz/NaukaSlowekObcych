@@ -8,12 +8,20 @@ namespace NaukaSlowekObcych
 {
     class Question
     {
+        private IState state;
         Word word;
         List<Word> answers = new List<Word>();
+       
         int questionid;
         Level level;
         //siema
 
+
         void Request() { }
+
+        public void SetQuestion(IState state)
+        {
+            this.state = state;
+        }
     }
 }
