@@ -18,6 +18,14 @@ public class Word
             this.english = english;
         }
 
+        public String getPolish()
+        {
+            return polish;
+        }
 
+        public String getEnglish()
+        {
+            return english;
+        }
     }
 }

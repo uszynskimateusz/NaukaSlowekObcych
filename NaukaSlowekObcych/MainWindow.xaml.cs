@@ -24,6 +24,37 @@ namespace NaukaSlowekObcych
         public MainWindow()
         {
             InitializeComponent();
+            testSingleton();
+        }
+
+        public void testSingleton()
+        {
+            IPolaczenie p1 = WordStorage.GetPolaczenie();
+            IPolaczenie p2 = WordStorage.GetPolaczenie();
+            IPolaczenie p3 = WordStorage.GetPolaczenie();
+
+
+            p1.add(new Word("polski", "polish"));
+            p2.add(new Word("kot", "cat"));
+            p3.add(new Word("pies", "dog"));
+
+            Console.WriteLine("P1 --------------------------");
+            Console.WriteLine(p1.get(0).getPolish());
+            Console.WriteLine(p1.get(1).getPolish());
+            Console.WriteLine(p1.get(2).getPolish());
+
+            Console.WriteLine("P2 --------------------------");
+            Console.WriteLine(p2.get(0).getPolish());
+            Console.WriteLine(p2.get(1).getPolish());
+            Console.WriteLine(p2.get(2).getPolish());
+
+            Console.WriteLine("P3 --------------------------");
+            Console.WriteLine(p3.get(0).getPolish());
+            Console.WriteLine(p3.get(1).getPolish());
+            Console.WriteLine(p3.get(2).getPolish());
+
+            DatabaseFacade databaseFacade = new EntityFramework();
+            databaseFacade.addWord();
         }
     }
 }

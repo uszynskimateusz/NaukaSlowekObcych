@@ -58,7 +58,10 @@
     <Compile Include="Answer.cs" />
     <Compile Include="AnswerDecorator.cs" />
     <Compile Include="AnswerInterface.cs" />
+    <Compile Include="DatabaseFacade.cs" />
+    <Compile Include="EntityFramework.cs" />
     <Compile Include="HideLetters.cs" />
+    <Compile Include="IPolaczenie.cs" />
     <Compile Include="IState.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MixFive.cs" />
@@ -68,6 +71,7 @@
     <Compile Include="StateLearn.cs" />
     <Compile Include="StateTest.cs" />
     <Compile Include="Word.cs" />
+    <Compile Include="WordStorage.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
