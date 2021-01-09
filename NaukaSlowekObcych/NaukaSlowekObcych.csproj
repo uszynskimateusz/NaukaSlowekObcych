@@ -55,8 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Answer.cs" />
+    <Compile Include="AnswerDecorator.cs" />
+    <Compile Include="AnswerInterface.cs" />
+    <Compile Include="HideLetters.cs" />
     <Compile Include="IState.cs" />
     <Compile Include="Level.cs" />
+    <Compile Include="MixFive.cs" />
+    <Compile Include="MixFour.cs" />
+    <Compile Include="MixThree.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="StateLearn.cs" />
     <Compile Include="StateTest.cs" />

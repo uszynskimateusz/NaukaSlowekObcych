@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace NaukaSlowekObcych
 {
-    class Word
-    {
-        string polish;
-        string english;
+public class Word
+   {
+        public string polish { get; set; }
+        public string english { get; set; }
 
-        public Word (string polish, string english)
+        public Word(string polish, string english)
         {
 
-            polish = this.polish;
-            english = this.english;
+            this.polish = polish;
+            this.english = english;
         }
+
 
     }
 }
