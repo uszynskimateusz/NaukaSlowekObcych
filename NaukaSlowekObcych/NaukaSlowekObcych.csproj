@@ -55,8 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IState.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Question.cs" />
+    <Compile Include="StateLearn.cs" />
+    <Compile Include="StateTest.cs" />
     <Compile Include="Word.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
