@@ -9,7 +9,7 @@ namespace NaukaSlowekObcych
 {
     class EntityFramework : DatabaseFacade
     {
-        string sqlConnectionString = Properties.Settings.Default.WordStorageConnectionString;
+        string sqlConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security = True";
 
         public void addWord()
         {

@@ -16,46 +16,20 @@ namespace NaukaSlowekObcych
         {
             List<Word> answerhidden = new List<Word>(base.generateAnswerList());
 
-            List<Word> helplist = new List<Word>();
+            Random rng = new Random();
 
-
-
-
-            Random rnd = new Random();
-            int atmoment;
-            int checkflag;
-            int[] tabforrandomnumbers = new int[4];
-
-            for (int i = 0; i < 4; i++)
+            int n = answerhidden.Count;
+            while (n > 1)
             {
-                tabforrandomnumbers[i] = 5;
-            }
-            atmoment = rnd.Next(0, 4);
-            tabforrandomnumbers[0] = atmoment;
-            helplist.Add(answerhidden[atmoment]);
-
-            for (int i = 1; i < 4; i++)
-            {
-                checkflag = 0;
-                atmoment = rnd.Next(0, 4);
-                for (int j = 1; j < 4; j++)
-                {
-                    if (tabforrandomnumbers[j] == atmoment)
-                    {
-                        checkflag = -1;
-                    }
-                }
-
-                if (checkflag != -1)
-                {
-                    helplist.Add(answerhidden[atmoment]);
-                }
-
-
+                n--;
+                int k = rng.Next(n + 1);
+                Word value = answerhidden[k];
+                answerhidden[k] = answerhidden[n];
+                answerhidden[n] = value;
             }
 
 
-            return helplist;
+            return answerhidden;
         }
     }
 }

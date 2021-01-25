@@ -57,12 +57,16 @@
     </ApplicationDefinition>
     <Compile Include="Answer.cs" />
     <Compile Include="AnswerDecorator.cs" />
+    <Compile Include="AnswerFour.cs" />
     <Compile Include="AnswerInterface.cs" />
+    <Compile Include="AnswerThree.cs" />
+    <Compile Include="AnswerTwo.cs" />
     <Compile Include="DatabaseFacade.cs" />
     <Compile Include="EntityFramework.cs" />
     <Compile Include="HideLetters.cs" />
     <Compile Include="IPolaczenie.cs" />
     <Compile Include="IState.cs" />
+    <Compile Include="LearningMethods.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MixFive.cs" />
     <Compile Include="MixFour.cs" />
