@@ -9,7 +9,11 @@ namespace NaukaSlowekObcych
     class WordStorage
     {
         private List<Word> words = new List<Word>();
-        private WordStorage() { }
+        DatabaseFacade databaseFacade;
+        private WordStorage() {
+            databaseFacade = new EntityFramework();
+            words = databaseFacade.getWords();
+        }
         public static IPolaczenie GetPolaczenie()
         {
             return Polaczenie.getInstance();
@@ -45,11 +49,6 @@ namespace NaukaSlowekObcych
                 return wordStorage.words[index];
             }
 
-            public void set(int index, Word word)
-            {
-                wordStorage.words[index - 1] = word;
-            }
-
             public int lenght()
             {
                 return wordStorage.words.Count;
@@ -58,6 +57,26 @@ namespace NaukaSlowekObcych
             public void add(Word word)
             {
                 wordStorage.words.Add(word);
+                wordStorage.databaseFacade.addWord(word);
+            }
+
+            public void edit(Word word, Word newWord)
+            {
+                foreach(Word oldWord in wordStorage.words)
+                {
+                    if (oldWord.getPolish() == word.getPolish() && oldWord.getEnglish() == word.getEnglish())
+                    {
+                        oldWord.polish = newWord.getPolish();
+                        oldWord.english = newWord.getEnglish();
+                        wordStorage.databaseFacade.editWord(oldWord, newWord);
+                    }
+                }
+            }
+
+            public void remove(Word word)
+            {
+                wordStorage.words.Remove(word);
+                wordStorage.databaseFacade.removeWord(word);
             }
         }
     }

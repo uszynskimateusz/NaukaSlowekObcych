@@ -11,8 +11,6 @@ namespace NaukaSlowekObcych
 
         List<Word> answersthree = new List<Word>();
 
-
-
         public override List<Word> generateAnswerList()
         {
 

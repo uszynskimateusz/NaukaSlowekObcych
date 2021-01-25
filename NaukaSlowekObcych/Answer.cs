@@ -10,17 +10,16 @@ namespace NaukaSlowekObcych
     {
 
         List<Word> answers = new List<Word>();
-       
         
 
        public override List<Word> generateAnswerList()
-       {
-            
-            answers.Add(new Word("pies", "dog"));
-            answers.Add(new Word("kot", "cat"));
-            answers.Add(new Word("rózga", "rod"));
-            answers.Add(new Word("witam", "hello"));
-            answers.Add(new Word("siema", "yobro"));
+        {            
+            IPolaczenie p1 = WordStorage.GetPolaczenie();
+            for (int i = 0; i < p1.lenght(); i++)
+            {
+                Word word = new Word(p1.get(i).getPolish(), p1.get(i).getEnglish());
+                answers.Add(word);
+            }
             return answers;
        }
     }

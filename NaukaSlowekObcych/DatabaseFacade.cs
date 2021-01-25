@@ -8,9 +8,9 @@ namespace NaukaSlowekObcych
 {
     interface DatabaseFacade
     {
-        Word getRandomWord();
-        void SaveChanges();
-        void addWord();
+        List<Word> getWords();
+        void addWord(Word word);
         void removeWord(Word word);
+        void editWord(Word word, Word editWord);
     }
 }

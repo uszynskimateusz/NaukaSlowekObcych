@@ -9,8 +9,9 @@ namespace NaukaSlowekObcych
     interface IPolaczenie
     {
         Word get(int index);
-        void set(int index, Word word);
         int lenght();
         void add(Word word);
+        void edit(Word word, Word newWord);
+        void remove(Word word);
     }
 }

@@ -6,30 +6,67 @@
         xmlns:local="clr-namespace:NaukaSlowekObcych"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="button3">
-        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="69,286,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-        <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Margin="196,286,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
-        <Button x:Name="button6" Content="Button" HorizontalAlignment="Left" Margin="318,286,0,0" VerticalAlignment="Top" Width="75" Click="button6_Click"/>
-        <Button x:Name="button4" Content="Button" HorizontalAlignment="Left" Margin="442,286,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click"/>
-        <Button x:Name="button5" Content="Button" HorizontalAlignment="Left" Margin="573,286,0,0" VerticalAlignment="Top" Width="75" Click="button5_Click"/>
-        <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="169,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.972,-2.338" Width="92" FontSize="14"/>
-        <Label x:Name="checklabel" Content="" HorizontalAlignment="Left" Margin="629,196,0,0" VerticalAlignment="Top" Width="122"/>
-        <Label x:Name="labelwelcome" Content="   Witaj w nauce słówek&#xD;&#xA;  wybierz tryb programu&#xD;&#xA;" HorizontalAlignment="Left" Margin="295,40,0,0" VerticalAlignment="Top" Width="232" Height="82" FontSize="18"/>
-        <Button x:Name="btnlearn" Content="Nauka" HorizontalAlignment="Left" Margin="271,143,0,0" VerticalAlignment="Top" Width="75" Click="btnlearn_Click"/>
-        <Button x:Name="btntest" Content="Test" HorizontalAlignment="Left" Margin="471,143,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.644,0.652" Click="btntest_Click"/>
-        <Label x:Name="labelsentence" Content="Jaki to wyraz :" HorizontalAlignment="Left" Margin="69,193,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Button x:Name="btnlvl1" Content="Poziom 1" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" Width="75" Click="btnlvl1_Click"/>
-        <Button x:Name="btnlvl2" Content="Poziom 2" HorizontalAlignment="Left" Margin="25,50,0,0" VerticalAlignment="Top" Width="75" Click="btnlvl2_Click"/>
-        <Button x:Name="btnlvl3" Content="Poziom 3" HorizontalAlignment="Left" Margin="25,75,0,0" VerticalAlignment="Top" Width="75" Click="btnlvl3_Click"/>
-        <Button x:Name="btnlvl4" Content="Poziom 4" HorizontalAlignment="Left" Margin="25,100,0,0" VerticalAlignment="Top" Width="75" Click="btnlvl4_Click"/>
-        <Label x:Name="labelchooselang" Content="Wybierz w jakim jezyku będą odpowiedzi" HorizontalAlignment="Left" Margin="105,25,0,0" VerticalAlignment="Top" Width="242"/>
-        <Button x:Name="btnlangpolish" Content="polski" HorizontalAlignment="Left" Margin="118,50,0,0" VerticalAlignment="Top" Width="75" Click="btnlangpolish_Click"/>
-        <Button x:Name="btnlangeng" Content="angielski" HorizontalAlignment="Left" Margin="215,50,0,0" VerticalAlignment="Top" Width="75" Click="btnlangeng_Click"/>
-        <Button x:Name="btnlvl5" Content="Poziom 5" HorizontalAlignment="Left" Margin="25,125,0,0" VerticalAlignment="Top" Width="75" Click="btnlvl5_Click"/>
-        <TextBox x:Name="textbox1" HorizontalAlignment="Left" Height="23" Margin="266,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textbox1_TextChanged"/>
-        <Button x:Name="btncheck" Content="Sprawdź" HorizontalAlignment="Left" Margin="425,199,0,0" VerticalAlignment="Top" Width="75" Click="btncheck_Click"/>
-        <Button x:Name="btnback" Content="Powrót" HorizontalAlignment="Left" Margin="664,340,0,0" VerticalAlignment="Top" Width="75" Click="btnback_Click"/>
-        <Label x:Name="labelrunlvlagain" Content="Załaduj poziom ponownie" HorizontalAlignment="Left" Margin="126,77,0,0" VerticalAlignment="Top" Width="135"/>
+    <Grid>
+        <Grid x:Name="welcomeGrid" Visibility="Visible">
+            
+            <Grid.RowDefinitions >
+                <RowDefinition Height="250" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            
+            <Label x:Name="welcomeLabel" Content="Witaj w nauce słówek&#xD;&#xA;  wybierz tryb programu&#xD;&#xA;" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Top" Width="232" Height="82" FontSize="18" Grid.Row="0" Grid.ColumnSpan="2"/>
+            <Button x:Name="learnButton" Content="Nauka" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="75" Click="learnButtonClick" Grid.Row="1" Grid.Column="0"/>
+            <Button x:Name="testButton" Content="Test" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="75" Click="testButtonClick" Grid.Row="1" Grid.Column="1"/>
+        </Grid>
 
+        <Grid x:Name="learnGrid" Visibility="Hidden">
+            <Button x:Name="answerButton1" Content="Button" HorizontalAlignment="Left" Margin="69,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
+            <Button x:Name="answerButton2" Content="Button" HorizontalAlignment="Left" Margin="196,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
+            <Button x:Name="answerButton3" Content="Button" HorizontalAlignment="Left" Margin="318,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
+            <Button x:Name="answerButton4" Content="Button" HorizontalAlignment="Left" Margin="442,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
+            <Button x:Name="answerButton5" Content="Button" HorizontalAlignment="Left" Margin="573,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
+
+            <Label x:Name="sentenceLabel" Content="Jaki to wyraz :" HorizontalAlignment="Left" Margin="69,193,0,0" VerticalAlignment="Top" FontSize="14"/>
+            <Label x:Name="wordLabel" Content="Label" HorizontalAlignment="Left" Margin="169,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.972,-2.338" Width="92" FontSize="14"/>
+
+            <Button x:Name="lvl1Button" Content="Poziom 1" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" Width="75" Click="levelButtonClick" />
+            <Button x:Name="lvl2Button" Content="Poziom 2" HorizontalAlignment="Left" Margin="25,50,0,0" VerticalAlignment="Top" Width="75" Click="levelButtonClick" />
+            <Button x:Name="lvl3Button" Content="Poziom 3" HorizontalAlignment="Left" Margin="25,75,0,0" VerticalAlignment="Top" Width="75" Click="levelButtonClick"/>
+            <Button x:Name="lvl4Button" Content="Poziom 4" HorizontalAlignment="Left" Margin="25,100,0,0" VerticalAlignment="Top" Width="75" Click="levelButtonClick"/>
+            <Button x:Name="lvl5Button" Content="Poziom 5" HorizontalAlignment="Left" Margin="25,125,0,0" VerticalAlignment="Top" Width="75" Click="levelButtonClick"/>
+
+            <Label x:Name="chooseLangLabel" Content="Wybierz w jakim jezyku będą odpowiedzi" HorizontalAlignment="Left" Margin="105,25,0,0" VerticalAlignment="Top" Width="242"/>
+            <Button x:Name="langPolishButton" Content="polski" HorizontalAlignment="Left" Margin="118,50,0,0" VerticalAlignment="Top" Width="75" Click="languagePolishClick"/>
+            <Button x:Name="langEnglishButton" Content="angielski" HorizontalAlignment="Left" Margin="215,50,0,0" VerticalAlignment="Top" Width="75" Click="languageEnglishClick" />
+
+            <Label x:Name="runLvlAgainLabel" Content="Załaduj poziom ponownie" HorizontalAlignment="Left" Margin="126,77,0,0" VerticalAlignment="Top" Width="164"/>
+
+            <TextBox x:Name="answerTextBox" HorizontalAlignment="Left" Height="23" Margin="266,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+            <Button x:Name="checkButton" Content="Sprawdź" HorizontalAlignment="Left" Margin="425,199,0,0" VerticalAlignment="Top" Width="75" Click="checkButtonClick"/>
+            <Button x:Name="backButton" Content="Powrót" HorizontalAlignment="Left" Margin="664,340,0,0" VerticalAlignment="Top" Width="75" Click="backButtonClick" />
+
+            <Label x:Name="checklabel" Content="" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="122"/>
+        </Grid>
+
+        <Grid x:Name="testGrid" Visibility="Hidden">
+            <Button x:Name="answerTestButton1" Content="Button" HorizontalAlignment="Left" Margin="69,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
+            <Button x:Name="answerTestButton2" Content="Button" HorizontalAlignment="Left" Margin="196,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
+            <Button x:Name="answerTestButton3" Content="Button" HorizontalAlignment="Left" Margin="318,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
+            <Button x:Name="answerTestButton4" Content="Button" HorizontalAlignment="Left" Margin="442,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
+            <Button x:Name="answerTestButton5" Content="Button" HorizontalAlignment="Left" Margin="573,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
+
+            <Label x:Name="sentenceTestLabel" Content="Jaki to wyraz :" HorizontalAlignment="Left" Margin="69,193,0,0" VerticalAlignment="Top" FontSize="14"/>
+            <Label x:Name="wordTestLabel" Content="Label" HorizontalAlignment="Left" Margin="169,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.972,-2.338" Width="92" FontSize="14"/>
+
+            <Button x:Name="backTestButton" Content="Powrót" HorizontalAlignment="Left" Margin="664,340,0,0" VerticalAlignment="Top" Width="75" Click="backButtonClick" />
+
+            <Label x:Name="checkTestLabel" Content="" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="122"/>
+        </Grid>
+
+        
     </Grid>
 </Window>
