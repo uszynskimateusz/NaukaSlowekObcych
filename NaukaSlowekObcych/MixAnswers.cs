@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace NaukaSlowekObcych
 {
-    class MixThree : AnswerDecorator
+    class MixAnswers : AnswerDecorator
     {
-        public MixThree(AnswerInterface answerInterface) : base(answerInterface)
+        public MixAnswers(AnswerInterface answerInterface) : base(answerInterface)
         {
 
         }
         public override List<Word> generateAnswerList()
         {
             List<Word> answerhidden = new List<Word>(base.generateAnswerList());
-
-            List<Word> helplist = new List<Word>();
-
-
+        
 
             Random rng = new Random();
 
@@ -35,5 +32,6 @@ namespace NaukaSlowekObcych
 
             return answerhidden;
         }
+
     }
 }

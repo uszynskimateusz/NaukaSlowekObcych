@@ -39,6 +39,8 @@ namespace NaukaSlowekObcych
 
             testSingleton();
 
+
+
         }
 
 
@@ -51,14 +53,35 @@ namespace NaukaSlowekObcych
            
 
             AnswerInterface answer = new Answer();
-            answer = new MixFive(answer);
+            answer = new MixAnswers(answer);
             List<Word> testowy = new List<Word>(answer.generateAnswerList());
 
+
+            List<Word> helplistwo = new List<Word>();
+
+            
             Random rnd = new Random();
             int wordwelookingfor;
-            wordwelookingfor = rnd.Next(0, testowy.Count-1);
+            wordwelookingfor = rnd.Next(0, 5);
 
+
+            helplistwo.Add(testowy[wordwelookingfor]);
+
+            int i = 0; ;
+            while(helplistwo.Count-1 <5)
+            {
+                if (helplistwo[0] != testowy[i])
+                {
+                    helplistwo.Add(testowy[i]);
+                }
+                i++;
+            }
+               
+            
             //do rozkminienia
+
+
+
 
             if (languageside == 0)
             {
@@ -97,8 +120,8 @@ namespace NaukaSlowekObcych
             int wordwelookingfor;
             wordwelookingfor = rnd.Next(0, 4);
 
-            AnswerInterface answer = new AnswerFour();
-            answer = new MixFour(answer);
+            AnswerInterface answer = new Answer();
+            answer = new MixAnswers(answer);
             List<Word> testowy = new List<Word>(answer.generateAnswerList());
 
             
@@ -138,8 +161,8 @@ namespace NaukaSlowekObcych
             int wordwelookingfor;
             wordwelookingfor = rnd.Next(0, 3);
 
-            AnswerInterface answer = new AnswerThree();
-            answer = new MixThree(answer);
+            AnswerInterface answer = new Answer();
+            answer = new MixAnswers(answer);
             List<Word> testowy = new List<Word>(answer.generateAnswerList());
 
        
@@ -180,8 +203,8 @@ namespace NaukaSlowekObcych
             int wordwelookingfor;
             wordwelookingfor = rnd.Next(0, 2);
 
-            AnswerInterface answer = new AnswerTwo();
-            answer = new MixThree(answer);
+            AnswerInterface answer = new Answer();
+            answer = new MixAnswers(answer);
             List<Word> testowy = new List<Word>(answer.generateAnswerList());
 
             
@@ -225,6 +248,8 @@ namespace NaukaSlowekObcych
            // btnlvl1.Content = listforanswer[wordwelookingfor].english;
             rightword = listforanswer[wordwelookingfor].english;
 
+            lvl1Button.Content = rightword;
+
             answer = new HideLetters(answer);
 
 
@@ -244,7 +269,7 @@ namespace NaukaSlowekObcych
                 wordwelookingfor = rnd.Next(0, 5);
 
                 AnswerInterface answer = new Answer();
-                answer = new MixFive(answer);
+                answer = new MixAnswers(answer);
                 List<Word> testowy = new List<Word>(answer.generateAnswerList());
 
 
@@ -462,8 +487,11 @@ namespace NaukaSlowekObcych
 
         private void checkButtonClick(object sender, RoutedEventArgs e)
         {
-            if(answerTextBox.Text.ToString() == rightword)
+            //answerTextBox.Text = " ";
+
+            if (answerTextBox.Text.ToString() == rightword)
             {
+                answerTextBox.Text = " ";
                 Level5();
             }
         }
@@ -474,6 +502,62 @@ namespace NaukaSlowekObcych
             learnGrid.Visibility = Visibility.Hidden;
             testGrid.Visibility = Visibility.Hidden;
         }
-        
+
+        private void addWordButton_Click(object sender, RoutedEventArgs e)
+        {
+            IPolaczenie polaczenie = WordStorage.GetPolaczenie();
+
+            if (string.IsNullOrWhiteSpace(polishWordTextBox.Text) && string.IsNullOrWhiteSpace(englishWordTextBox.Text))
+            { } else 
+            {
+                polaczenie.add(new Word(polishWordTextBox.Text.ToString(), englishWordTextBox.Text.ToString()));
+            }
+            polishWordTextBox.Text = " ";
+            englishWordTextBox.Text = " ";
+        }
+
+        private void deleteWordButton_Click(object sender, RoutedEventArgs e)
+        {
+            IPolaczenie polaczenie = WordStorage.GetPolaczenie();
+
+            Word word = (Word)wordListComboBox.SelectedItem;
+            polaczenie.remove(word);
+
+
+        }
+
+        private void manageWordButton_Click(object sender, RoutedEventArgs e)
+        {
+            IPolaczenie polaczenie = WordStorage.GetPolaczenie();
+
+            List<Word> words = new List<Word>();
+
+            for (int i = 0; i < polaczenie.lenght(); i++)
+            {
+                words.Add(polaczenie.get(i));
+            }
+            wordListComboBox.ItemsSource = words;
+
+        }
+
+        private void editWordButton_Click(object sender, RoutedEventArgs e)
+        {
+            IPolaczenie polaczenie = WordStorage.GetPolaczenie();
+            Word word = (Word)wordListComboBox.SelectedItem;
+
+            if (string.IsNullOrWhiteSpace(polishWordTextBox.Text) && string.IsNullOrWhiteSpace(englishWordTextBox.Text))
+            { }
+            else
+            {
+                polaczenie.edit(word, new Word(polishWordTextBox.Text.ToString(), englishWordTextBox.Text.ToString()));
+            }
+            polishWordTextBox.Text = " ";
+            englishWordTextBox.Text = " ";
+        }
+
+        private void answerTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -27,5 +27,10 @@ public class Word
         {
             return english;
         }
+
+        public String toString()
+        {
+            return polish + " " + english;
+        }
     }
 }
