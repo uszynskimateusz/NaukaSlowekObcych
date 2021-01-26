@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid x:Name="welcomeGrid" Visibility="Hidden">
+        <Grid x:Name="welcomeGrid" Visibility="Visible">
             
             <Grid.RowDefinitions >
                 <RowDefinition Height="250" />
@@ -24,7 +24,7 @@
             <Button x:Name="manageWordButton" Content="Baza" HorizontalAlignment="Left" Margin="5,66,0,-55" VerticalAlignment="Top" Width="75" Grid.Row="1" Grid.Column="1" Click="manageWordButton_Click"/>
         </Grid>
 
-        <Grid x:Name="learnGrid" Visibility="Visible">
+        <Grid x:Name="learnGrid" Visibility="Hidden">
             <Button x:Name="answerButton1" Content="Button" HorizontalAlignment="Left" Margin="69,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
             <Button x:Name="answerButton2" Content="Button" HorizontalAlignment="Left" Margin="196,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
             <Button x:Name="answerButton3" Content="Button" HorizontalAlignment="Left" Margin="318,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
@@ -70,17 +70,26 @@
 
 
         <Grid x:Name="baseGrid" Visibility="Hidden">
-            <Button x:Name="addWordButton" Content="Dodaj" HorizontalAlignment="Left" Margin="532,139,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.436,1.943" Click="addWordButton_Click"/>
-            <Button x:Name="deleteWordButton" Content="Usuń" HorizontalAlignment="Left" Margin="532,180,0,0" VerticalAlignment="Top" Width="75" Click="deleteWordButton_Click"/>
-            <Button x:Name="editWordButton" Content="Edytuj" HorizontalAlignment="Left" Margin="532,219,0,0" VerticalAlignment="Top" Width="75" Click="editWordButton_Click"/>
+            <Button x:Name="addWordButton" Content="Dodaj" HorizontalAlignment="Left" Margin="404,109,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.436,1.943" Click="addWordButton_Click"/>
+            <Button x:Name="deleteWordButton" Content="Usuń" HorizontalAlignment="Left" Margin="404,195,0,0" VerticalAlignment="Top" Width="75" Click="deleteWordButton_Click"/>
+            <Button x:Name="editWordButton" Content="Edytuj" HorizontalAlignment="Left" Margin="404,150,0,0" VerticalAlignment="Top" Width="75" Click="editWordButton_Click"/>
 
             <Button x:Name="backBaseButton" Content="Powrót" HorizontalAlignment="Left" Margin="664,340,0,0" VerticalAlignment="Top" Width="75" Click="backButtonClick" />
-            <TextBox x:Name="polishWordTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="276,140,0,0" />
-            <TextBox x:Name="englishWordTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="276,177,0,0"/>
-            <Label x:Name="messagePolishBaseLabel" Content="Wprowadź słowo po polsku&#xD;&#xA;" HorizontalAlignment="Left" Margin="96,136,0,0" VerticalAlignment="Top" Height="27"/>
-            <Label x:Name="messageEnglishBaseLabel" Content="Wprowadź słowo po angielsku&#xA;" HorizontalAlignment="Left" Margin="96,173,0,0" VerticalAlignment="Top" Height="27"/>
-            <ComboBox x:Name="wordListComboBox" HorizontalAlignment="Left" Margin="276,229,0,0" VerticalAlignment="Top" Width="216" RenderTransformOrigin="-0.279,-0.76" DisplayMemberPath="polish" />
+            <TextBox x:Name="polishWordTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="239,109,0,0" RenderTransformOrigin="0.522,-0.376" />
+            <TextBox x:Name="englishWordTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="239,147,0,0"/>
+            <Label x:Name="messagePolishBaseLabel" Content="Wprowadź słowo po polsku&#xD;&#xA;" HorizontalAlignment="Left" Margin="50,105,0,0" VerticalAlignment="Top" Height="27" RenderTransformOrigin="0.334,-4.585"/>
+            <Label x:Name="messageEnglishBaseLabel" Content="Wprowadź słowo po angielsku&#xA;" HorizontalAlignment="Left" Margin="50,147,0,0" VerticalAlignment="Top" Height="27"/>
+            <ComboBox x:Name="wordListComboBox" HorizontalAlignment="Left" Margin="50,195,0,0" VerticalAlignment="Top" Width="216" RenderTransformOrigin="-0.279,-0.76" DisplayMemberPath="polish" />
+            <Label Content="Aby dodać uzuepłnij pola" HorizontalAlignment="Left" Margin="514,109,0,0" VerticalAlignment="Top" Width="206"/>
+            <Label Content="Aby edytować uzupełnij pola i wybierz &#xD;&#xA;edytowane słowo z listy&#xD;&#xA;" HorizontalAlignment="Left" Margin="514,140,0,0" VerticalAlignment="Top" Width="256" Height="44"/>
+            <Label Content="Aby usunąć wybierz słowo z listy&#xD;&#xA;" HorizontalAlignment="Left" Margin="514,189,0,0" VerticalAlignment="Top" Width="194"/>
+
+
+
         </Grid>
+
+
+     
        
     </Grid>
 </Window>

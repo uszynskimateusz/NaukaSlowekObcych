@@ -37,10 +37,6 @@ namespace NaukaSlowekObcych
             learnGrid.Visibility = Visibility.Hidden;
             testGrid.Visibility = Visibility.Hidden;
 
-            testSingleton();
-
-
-
         }
 
 
@@ -248,7 +244,7 @@ namespace NaukaSlowekObcych
            // btnlvl1.Content = listforanswer[wordwelookingfor].english;
             rightword = listforanswer[wordwelookingfor].english;
 
-            lvl1Button.Content = rightword;
+           // lvl1Button.Content = rightword;
 
             answer = new HideLetters(answer);
 
@@ -290,49 +286,7 @@ namespace NaukaSlowekObcych
         }
         
 
-        public void testSingleton()
-        {
-            /* IPolaczenie p1 = WordStorage.GetPolaczenie();
-            IPolaczenie p2 = WordStorage.GetPolaczenie();
-            IPolaczenie p3 = WordStorage.GetPolaczenie();
-
-
-            p1.add(new Word("polski", "polish"));
-            p2.add(new Word("kot", "cat"));
-            p3.add(new Word("pies", "dog"));
-
-            Console.WriteLine("P1 --------------------------");
-            Console.WriteLine(p1.get(0).getPolish());
-            Console.WriteLine(p1.get(1).getPolish());
-            Console.WriteLine(p1.get(2).getPolish());
-
-            Console.WriteLine("P2 --------------------------");
-            Console.WriteLine(p2.get(0).getPolish());
-            Console.WriteLine(p2.get(1).getPolish());
-            Console.WriteLine(p2.get(2).getPolish());
-
-            Console.WriteLine("P3 --------------------------");
-            Console.WriteLine(p3.get(0).getPolish());
-            Console.WriteLine(p3.get(1).getPolish());
-            Console.WriteLine(p3.get(2).getPolish());  */
-
-            //DatabaseFacade databaseFacade = new EntityFramework();
-            //databaseFacade.addWord(new Word("witam", "hello"));
-
-            Word a = new Word("dobrze", "good");
-            //databaseFacade.addWord(a);
-            //databaseFacade.editWord(a, new Word("zajebiscie", "good"));
-
-            IPolaczenie p1 = WordStorage.GetPolaczenie();
-           
-
-            for(int i = 0; i<p1.lenght(); i++)
-            {
-                Console.WriteLine(i + ". " + p1.get(i).getPolish() + "______________________________________" + p1.get(i).getEnglish());
-
-            }
-
-        }
+    
 
 
         private void buttonAnswerClick(object sender, RoutedEventArgs e)
@@ -375,6 +329,19 @@ namespace NaukaSlowekObcych
             welcomeGrid.Visibility = Visibility.Hidden;
             testGrid.Visibility = Visibility.Hidden;
             learnGrid.Visibility = Visibility.Visible;
+
+            answerButton1.Visibility = Visibility.Hidden;
+            answerButton2.Visibility = Visibility.Hidden;
+            answerButton3.Visibility = Visibility.Hidden;
+            answerButton4.Visibility = Visibility.Hidden;
+            answerButton5.Visibility = Visibility.Hidden;
+
+            sentenceLabel.Visibility = Visibility.Hidden;
+            wordLabel.Visibility = Visibility.Hidden;
+            answerTextBox.Visibility = Visibility.Hidden;
+            checkButton.Visibility = Visibility.Hidden;
+            runLvlAgainLabel.Visibility = Visibility.Hidden;
+
         }
 
         private void testButtonClick(object sender, RoutedEventArgs e)
@@ -394,6 +361,9 @@ namespace NaukaSlowekObcych
         private void levelButtonClick(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
+
+            sentenceLabel.Visibility = Visibility.Visible;
+            wordLabel.Visibility = Visibility.Visible;
 
             if (button.Name == lvl1Button.Name)
             {
@@ -501,6 +471,7 @@ namespace NaukaSlowekObcych
             welcomeGrid.Visibility = Visibility.Visible;
             learnGrid.Visibility = Visibility.Hidden;
             testGrid.Visibility = Visibility.Hidden;
+            baseGrid.Visibility = Visibility.Hidden;
         }
 
         private void addWordButton_Click(object sender, RoutedEventArgs e)
@@ -537,6 +508,10 @@ namespace NaukaSlowekObcych
                 words.Add(polaczenie.get(i));
             }
             wordListComboBox.ItemsSource = words;
+
+
+            welcomeGrid.Visibility = Visibility.Hidden;
+            baseGrid.Visibility = Visibility.Visible;
 
         }
 
