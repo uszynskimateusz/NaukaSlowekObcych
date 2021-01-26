@@ -11,6 +11,7 @@ namespace NaukaSlowekObcych
        List<Word> answers = new List<Word>();
        public override List<Word> generateAnswerList(IPolaczenie polaczenie)
         {            
+
             for (int i = 0; i < polaczenie.lenght(); i++)
             {
                 Word word = new Word(polaczenie.get(i).getPolish(), polaczenie.get(i).getEnglish());
