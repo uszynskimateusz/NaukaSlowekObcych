@@ -9,9 +9,9 @@ namespace NaukaSlowekObcych
     class StateLearn : IState
     {
 
-        public override void GetPoint()
+        public override int GetPoint()
         {
-
+            return 1;
         }
 
     }
