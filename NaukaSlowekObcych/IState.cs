@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace NaukaSlowekObcych
 {
-    abstract class IState
+    public abstract class IState
     {
-        protected Question question;
-        public void SetQuestion(Question question)
+        public Word word;
+        public void SetWordState(Word word)
         {
-            this.question = question;
+            this.word = word;
         }
-        public abstract void GetPoint();
+        public abstract int GetPoint();
 
     }
 }
