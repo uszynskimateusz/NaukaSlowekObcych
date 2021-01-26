@@ -78,9 +78,7 @@ namespace NaukaSlowekObcych
                 answerButton3.Content = testowy[2].getPolish();
                 answerButton4.Content = testowy[3].getPolish();
                 answerButton5.Content = testowy[4].getPolish();
-            }
-           
-            if(languageside == 1)
+            } else if(languageside == 1)
             {
                 wordLabel.Content = testowy[wordwelookingfor].getPolish();
                 rightword = testowy[wordwelookingfor].getEnglish();
@@ -480,11 +478,6 @@ namespace NaukaSlowekObcych
             }
             polishWordTextBox.Text = " ";
             englishWordTextBox.Text = " ";
-        }
-
-        private void answerTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
