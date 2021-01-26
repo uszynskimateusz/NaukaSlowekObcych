@@ -26,7 +26,9 @@ namespace NaukaSlowekObcych
         int flag = 0;
         int automaticrun = 0;
         int pkt = 0;
-     
+
+        Language language;
+        IPolaczenie polaczenie;
             
         //proba
         public MainWindow()
@@ -36,6 +38,10 @@ namespace NaukaSlowekObcych
             welcomeGrid.Visibility = Visibility.Visible;
             learnGrid.Visibility = Visibility.Hidden;
             testGrid.Visibility = Visibility.Hidden;
+
+            polaczenie = WordStorage.GetPolaczenie();
+
+            language = new Language(new StateTest());
 
         }
 
@@ -50,7 +56,7 @@ namespace NaukaSlowekObcych
 
             AnswerInterface answer = new Answer();
             answer = new MixAnswers(answer);
-            List<Word> testowy = new List<Word>(answer.generateAnswerList());
+            List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
 
 
             List<Word> helplistwo = new List<Word>();
@@ -81,28 +87,28 @@ namespace NaukaSlowekObcych
 
             if (languageside == 0)
             {
-                wordLabel.Content = testowy[wordwelookingfor].english;
-                rightword = testowy[wordwelookingfor].polish;
+                wordLabel.Content = testowy[wordwelookingfor].getEnglish();
+                rightword = testowy[wordwelookingfor].getPolish();
 
 
-                answerButton1.Content = testowy[0].polish;
-                answerButton2.Content = testowy[1].polish;
-                answerButton3.Content = testowy[2].polish;
-                answerButton4.Content = testowy[3].polish;
-                answerButton5.Content = testowy[4].polish;
+                answerButton1.Content = testowy[0].getPolish();
+                answerButton2.Content = testowy[1].getPolish();
+                answerButton3.Content = testowy[2].getPolish();
+                answerButton4.Content = testowy[3].getPolish();
+                answerButton5.Content = testowy[4].getPolish();
             }
            
             if(languageside == 1)
             {
-                wordLabel.Content = testowy[wordwelookingfor].polish;
-                rightword = testowy[wordwelookingfor].english;
+                wordLabel.Content = testowy[wordwelookingfor].getPolish();
+                rightword = testowy[wordwelookingfor].getEnglish();
 
 
-                answerButton1.Content = testowy[0].english;
-                answerButton2.Content = testowy[1].english;
-                answerButton3.Content = testowy[2].english;
-                answerButton4.Content = testowy[3].english;
-                answerButton5.Content = testowy[4].english;
+                answerButton1.Content = testowy[0].getEnglish();
+                answerButton2.Content = testowy[1].getEnglish();
+                answerButton3.Content = testowy[2].getEnglish();
+                answerButton4.Content = testowy[3].getEnglish();
+                answerButton5.Content = testowy[4].getEnglish();
             }
            
           
@@ -118,32 +124,32 @@ namespace NaukaSlowekObcych
 
             AnswerInterface answer = new Answer();
             answer = new MixAnswers(answer);
-            List<Word> testowy = new List<Word>(answer.generateAnswerList());
+            List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
 
             
             if (languageside == 0)
             {
-                wordLabel.Content = testowy[wordwelookingfor].english;
-                rightword = testowy[wordwelookingfor].polish;
+                wordLabel.Content = testowy[wordwelookingfor].getEnglish();
+                rightword = testowy[wordwelookingfor].getPolish();
 
 
-                answerButton1.Content = testowy[0].polish;
-                answerButton2.Content = testowy[1].polish;
-                answerButton3.Content = testowy[2].polish;
-                answerButton4.Content = testowy[3].polish;
+                answerButton1.Content = testowy[0].getPolish();
+                answerButton2.Content = testowy[1].getPolish();
+                answerButton3.Content = testowy[2].getPolish();
+                answerButton4.Content = testowy[3].getPolish();
 
             }
 
             if (languageside == 1)
             {
-                wordLabel.Content = testowy[wordwelookingfor].polish;
-                rightword = testowy[wordwelookingfor].english;
+                wordLabel.Content = testowy[wordwelookingfor].getPolish();
+                rightword = testowy[wordwelookingfor].getEnglish();
 
 
-                answerButton1.Content = testowy[0].english;
-                answerButton2.Content = testowy[1].english;
-                answerButton3.Content = testowy[2].english;
-                answerButton4.Content = testowy[3].english;
+                answerButton1.Content = testowy[0].getEnglish();
+                answerButton2.Content = testowy[1].getEnglish();
+                answerButton3.Content = testowy[2].getEnglish();
+                answerButton4.Content = testowy[3].getEnglish();
 
             }
             
@@ -159,31 +165,31 @@ namespace NaukaSlowekObcych
 
             AnswerInterface answer = new Answer();
             answer = new MixAnswers(answer);
-            List<Word> testowy = new List<Word>(answer.generateAnswerList());
+            List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
 
        
             
             if (languageside == 0)
             {
-                wordLabel.Content = testowy[wordwelookingfor].english;
-                rightword = testowy[wordwelookingfor].polish;
+                wordLabel.Content = testowy[wordwelookingfor].getEnglish();
+                rightword = testowy[wordwelookingfor].getPolish();
 
 
-                answerButton1.Content = testowy[0].polish;
-                answerButton2.Content = testowy[1].polish;
-                answerButton3.Content = testowy[2].polish;
+                answerButton1.Content = testowy[0].getPolish();
+                answerButton2.Content = testowy[1].getPolish();
+                answerButton3.Content = testowy[2].getPolish();
 
             }
 
             if (languageside == 1)
             {
-                wordLabel.Content = testowy[wordwelookingfor].polish;
-                rightword = testowy[wordwelookingfor].english;
+                wordLabel.Content = testowy[wordwelookingfor].getPolish();
+                rightword = testowy[wordwelookingfor].getEnglish();
 
 
-                answerButton1.Content = testowy[0].english;
-                answerButton2.Content = testowy[1].english;
-                answerButton3.Content = testowy[2].english;
+                answerButton1.Content = testowy[0].getEnglish();
+                answerButton2.Content = testowy[1].getEnglish();
+                answerButton3.Content = testowy[2].getEnglish();
 
             }
 
@@ -201,28 +207,28 @@ namespace NaukaSlowekObcych
 
             AnswerInterface answer = new Answer();
             answer = new MixAnswers(answer);
-            List<Word> testowy = new List<Word>(answer.generateAnswerList());
+            List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
 
             
             if (languageside == 0)
             {
-                wordLabel.Content = testowy[wordwelookingfor].english;
-                rightword = testowy[wordwelookingfor].polish;
+                wordLabel.Content = testowy[wordwelookingfor].getEnglish();
+                rightword = testowy[wordwelookingfor].getPolish();
 
 
-                answerButton1.Content = testowy[0].polish;
-                answerButton2.Content = testowy[1].polish;
+                answerButton1.Content = testowy[0].getPolish();
+                answerButton2.Content = testowy[1].getPolish();
 
             }
 
             if (languageside == 1)
             {
-                wordLabel.Content = testowy[wordwelookingfor].polish;
-                rightword = testowy[wordwelookingfor].english;
+                wordLabel.Content = testowy[wordwelookingfor].getPolish();
+                rightword = testowy[wordwelookingfor].getEnglish();
 
 
-                answerButton1.Content = testowy[0].english;
-                answerButton2.Content = testowy[1].english;
+                answerButton1.Content = testowy[0].getEnglish();
+                answerButton2.Content = testowy[1].getEnglish();
 
             }
 
@@ -238,45 +244,38 @@ namespace NaukaSlowekObcych
             wordwelookingfor = rnd.Next(0, 5);
 
             AnswerInterface answer = new Answer();
+            List<Word> listforanswer = new List<Word>(answer.generateAnswerList(polaczenie));
 
-            List<Word> listforanswer = new List<Word>(answer.generateAnswerList());
-
-           // btnlvl1.Content = listforanswer[wordwelookingfor].english;
-            rightword = listforanswer[wordwelookingfor].english;
-
-           // lvl1Button.Content = rightword;
+            rightword = listforanswer[wordwelookingfor].getEnglish();
 
             answer = new HideLetters(answer);
 
 
-            List<Word> testowy = new List<Word>(answer.generateAnswerList());
+            List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
             
-            answerTextBox.Text = testowy[wordwelookingfor].english;
 
-            wordLabel.Content = testowy[wordwelookingfor].polish;
-
-       
+            answerTextBox.Text = testowy[wordwelookingfor].getEnglish();
+            wordLabel.Content = testowy[wordwelookingfor].getPolish();
        }
 
         public void LevelTest()
         {
-                Random rnd = new Random();
-                int wordwelookingfor;
-                wordwelookingfor = rnd.Next(0, 5);
+            Random rnd = new Random();
+            int wordwelookingfor;
+            wordwelookingfor = rnd.Next(0, 5);
 
-                AnswerInterface answer = new Answer();
-                answer = new MixAnswers(answer);
-                List<Word> testowy = new List<Word>(answer.generateAnswerList());
+            AnswerInterface answer = new Answer();
+            answer = new MixAnswers(answer);
+            List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
 
+            wordTestLabel.Content = testowy[wordwelookingfor].getPolish();
+            rightword = testowy[wordwelookingfor].getEnglish();
 
-            wordTestLabel.Content = testowy[wordwelookingfor].polish;
-                rightword = testowy[wordwelookingfor].english;
-
-            answerTestButton1.Content = testowy[0].english;
-            answerTestButton2.Content = testowy[1].english;
-            answerTestButton3.Content = testowy[2].english;
-            answerTestButton4.Content = testowy[3].english;
-            answerTestButton5.Content = testowy[4].english;
+            answerTestButton1.Content = testowy[0].getEnglish();
+            answerTestButton2.Content = testowy[1].getEnglish();
+            answerTestButton3.Content = testowy[2].getEnglish();
+            answerTestButton4.Content = testowy[3].getEnglish();
+            answerTestButton5.Content = testowy[4].getEnglish();
             
             automaticrun++;
             if (automaticrun == 6)
@@ -284,10 +283,6 @@ namespace NaukaSlowekObcych
                 checkTestLabel.Content = "Twoje punkty: " + pkt;
             }
         }
-        
-
-    
-
 
         private void buttonAnswerClick(object sender, RoutedEventArgs e)
         {
@@ -445,14 +440,16 @@ namespace NaukaSlowekObcych
 
         private void languagePolishClick(object sender, RoutedEventArgs e)
         {
+            language.ChangeState(new StateLearn());
             runLvlAgainLabel.Visibility = Visibility.Visible;
-            languageside = 0;
+            languageside = language.GetPoint();
         }
 
         private void languageEnglishClick(object sender, RoutedEventArgs e)
         {
+            language.ChangeState(new StateTest());
             runLvlAgainLabel.Visibility = Visibility.Visible;
-            languageside = 1;
+            languageside = language.GetPoint();
         }
 
         private void checkButtonClick(object sender, RoutedEventArgs e)

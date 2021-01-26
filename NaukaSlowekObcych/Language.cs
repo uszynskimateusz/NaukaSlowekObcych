@@ -6,30 +6,23 @@ using System.Threading.Tasks;
 
 namespace NaukaSlowekObcych
 {
-    class Question
+    class Language
     {
-        Word word;
-        List<Word> answers = new List<Word>();
-        int questionid;
-        Level level;
-        //siema
-
-        void Request() { }
-
-        //Od state
         private IState state;
 
-        public Question(IState state)
-        {
-            this.ChangeState(state);
-        }
-
-
-        public void ChangeState(IState state)
+        public Language(IState state)
         {
             this.state = state;
         }
-        //Koniec od state
+        public void ChangeState(IState state)
+        {
+            this.state = state;
+            this.state.SetLanguageState(this);
+        }
 
+        public int GetPoint()
+        {
+            return state.GetPoint();
+        }
     }
 }

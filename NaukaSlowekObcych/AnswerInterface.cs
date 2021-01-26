@@ -8,8 +8,6 @@ namespace NaukaSlowekObcych
 {
    public abstract class AnswerInterface
     {
-        
-        public abstract List<Word> generateAnswerList();
-
+        public abstract List<Word> generateAnswerList(IPolaczenie polaczenie);
     }
 }

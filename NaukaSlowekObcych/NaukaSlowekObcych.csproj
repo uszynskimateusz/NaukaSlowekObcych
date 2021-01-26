@@ -63,6 +63,7 @@
     <Compile Include="HideLetters.cs" />
     <Compile Include="IPolaczenie.cs" />
     <Compile Include="IState.cs" />
+    <Compile Include="Language.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MixAnswers.cs" />
     <Compile Include="Question.cs" />

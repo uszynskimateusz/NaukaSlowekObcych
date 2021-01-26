@@ -66,8 +66,8 @@ namespace NaukaSlowekObcych
                 {
                     if (oldWord.getPolish() == word.getPolish() && oldWord.getEnglish() == word.getEnglish())
                     {
-                        oldWord.polish = newWord.getPolish();
-                        oldWord.english = newWord.getEnglish();
+                        oldWord.setPolish(newWord.getPolish());
+                        oldWord.setEnglish(newWord.getEnglish());
                         wordStorage.databaseFacade.editWord(oldWord, newWord);
                     }
                 }

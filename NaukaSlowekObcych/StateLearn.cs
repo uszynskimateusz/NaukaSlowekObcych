@@ -8,11 +8,9 @@ namespace NaukaSlowekObcych
 {
     class StateLearn : IState
     {
-
         public override int GetPoint()
         {
             return 1;
         }
-
     }
 }

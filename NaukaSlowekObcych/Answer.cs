@@ -8,16 +8,13 @@ namespace NaukaSlowekObcych
 {
     class Answer : AnswerInterface
     {
+       List<Word> answers = new List<Word>();
 
-        List<Word> answers = new List<Word>();
-        
-
-       public override List<Word> generateAnswerList()
+       public override List<Word> generateAnswerList(IPolaczenie polaczenie)
         {            
-            IPolaczenie p1 = WordStorage.GetPolaczenie();
-            for (int i = 0; i < p1.lenght(); i++)
+            for (int i = 0; i < polaczenie.lenght(); i++)
             {
-                Word word = new Word(p1.get(i).getPolish(), p1.get(i).getEnglish());
+                Word word = new Word(polaczenie.get(i).getPolish(), polaczenie.get(i).getEnglish());
                 answers.Add(word);
             }
             return answers;

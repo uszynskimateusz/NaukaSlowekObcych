@@ -12,10 +12,9 @@ namespace NaukaSlowekObcych
         {
 
         }
-        public override List<Word> generateAnswerList()
+        public override List<Word> generateAnswerList(IPolaczenie polaczenie)
         {
-            List<Word> answerhidden = new List<Word>(base.generateAnswerList());
-        
+            List<Word> answerhidden = new List<Word>(base.generateAnswerList(polaczenie));
 
             Random rng = new Random();
 
@@ -29,9 +28,7 @@ namespace NaukaSlowekObcych
                 answerhidden[n] = value;
             }
 
-
             return answerhidden;
         }
-
     }
 }

@@ -8,8 +8,8 @@ namespace NaukaSlowekObcych
 {
 public class Word
    {
-        public string polish { get; set; }
-        public string english { get; set; }
+        private string polish { get; set; }
+        private string english { get; set; }
 
         public Word(string polish, string english)
         {
@@ -23,14 +23,19 @@ public class Word
             return polish;
         }
 
+        public void setPolish(string polish)
+        {
+            this.polish = polish;
+        }
+
         public String getEnglish()
         {
             return english;
         }
 
-        public String toString()
+        public void setEnglish(string english)
         {
-            return polish + " " + english;
+            this.english = english;
         }
     }
 }

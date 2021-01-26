@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NaukaSlowekObcych
 {
-    interface IPolaczenie
+    public interface IPolaczenie
     {
         Word get(int index);
         int lenght();

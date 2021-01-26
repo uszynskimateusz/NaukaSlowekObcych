@@ -16,9 +16,9 @@ namespace NaukaSlowekObcych
             _answerInterface = answerInterface;
         }
 
-        public override List<Word> generateAnswerList()
+        public override List<Word> generateAnswerList(IPolaczenie polaczenie)
         {
-            return _answerInterface.generateAnswerList();
+            return _answerInterface.generateAnswerList(polaczenie);
         }
 
     }
