@@ -12,7 +12,6 @@ namespace NaukaSlowekObcych
     class EntityFramework : DatabaseFacade
     {
         string sqlConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security = True";
-
         public void addWord(Word word)
         {
             using (SqlConnection conn = new SqlConnection(sqlConnectionString))
@@ -35,14 +34,12 @@ namespace NaukaSlowekObcych
                     {
                         MessageBox.Show(e.Message.ToString(), "Error Message");
                     }
-
                 }
             }
         }
 
         public void editWord(Word word, Word editWord)
         {
-
             using (SqlConnection conn = new SqlConnection(sqlConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())

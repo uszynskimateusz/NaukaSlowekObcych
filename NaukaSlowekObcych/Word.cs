@@ -10,10 +10,8 @@ public class Word
    {
         private string polish { get; set; }
         private string english { get; set; }
-
         public Word(string polish, string english)
         {
-
             this.polish = polish;
             this.english = english;
         }

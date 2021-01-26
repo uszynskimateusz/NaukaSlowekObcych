@@ -22,7 +22,6 @@ namespace NaukaSlowekObcych
     {
         String rightword;
         int languageside = 0;
-        int start = 0;
         int flag = 0;
         int automaticrun = 0;
         int pkt = 0;
@@ -42,25 +41,15 @@ namespace NaukaSlowekObcych
             polaczenie = WordStorage.GetPolaczenie();
 
             language = new Language(new StateTest());
-
         }
 
-
-        
-
-       public void Level4()
+       private void Level4()
         {
             //poziom z 5cioma przyciskami
-
-           
-
             AnswerInterface answer = new Answer();
             answer = new MixAnswers(answer);
             List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
-
-
             List<Word> helplistwo = new List<Word>();
-
             
             Random rnd = new Random();
             int wordwelookingfor;
@@ -79,17 +68,10 @@ namespace NaukaSlowekObcych
                 i++;
             }
                
-            
-            //do rozkminienia
-
-
-
-
             if (languageside == 0)
             {
                 wordLabel.Content = testowy[wordwelookingfor].getEnglish();
                 rightword = testowy[wordwelookingfor].getPolish();
-
 
                 answerButton1.Content = testowy[0].getPolish();
                 answerButton2.Content = testowy[1].getPolish();
@@ -103,18 +85,15 @@ namespace NaukaSlowekObcych
                 wordLabel.Content = testowy[wordwelookingfor].getPolish();
                 rightword = testowy[wordwelookingfor].getEnglish();
 
-
                 answerButton1.Content = testowy[0].getEnglish();
                 answerButton2.Content = testowy[1].getEnglish();
                 answerButton3.Content = testowy[2].getEnglish();
                 answerButton4.Content = testowy[3].getEnglish();
                 answerButton5.Content = testowy[4].getEnglish();
-            }
-           
-          
+            } 
         }
 
-        public void Level3()
+        private void Level3()
         {
             //poziom z 4roma przyciskami
 
@@ -132,12 +111,10 @@ namespace NaukaSlowekObcych
                 wordLabel.Content = testowy[wordwelookingfor].getEnglish();
                 rightword = testowy[wordwelookingfor].getPolish();
 
-
                 answerButton1.Content = testowy[0].getPolish();
                 answerButton2.Content = testowy[1].getPolish();
                 answerButton3.Content = testowy[2].getPolish();
                 answerButton4.Content = testowy[3].getPolish();
-
             }
 
             if (languageside == 1)
@@ -145,20 +122,16 @@ namespace NaukaSlowekObcych
                 wordLabel.Content = testowy[wordwelookingfor].getPolish();
                 rightword = testowy[wordwelookingfor].getEnglish();
 
-
                 answerButton1.Content = testowy[0].getEnglish();
                 answerButton2.Content = testowy[1].getEnglish();
                 answerButton3.Content = testowy[2].getEnglish();
                 answerButton4.Content = testowy[3].getEnglish();
-
             }
-            
         }
 
-        public void Level2()
+        private void Level2()
         {
             //poziom z 3ma przyciskami
-
             Random rnd = new Random();
             int wordwelookingfor;
             wordwelookingfor = rnd.Next(0, 3);
@@ -167,8 +140,6 @@ namespace NaukaSlowekObcych
             answer = new MixAnswers(answer);
             List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
 
-       
-            
             if (languageside == 0)
             {
                 wordLabel.Content = testowy[wordwelookingfor].getEnglish();
@@ -178,7 +149,6 @@ namespace NaukaSlowekObcych
                 answerButton1.Content = testowy[0].getPolish();
                 answerButton2.Content = testowy[1].getPolish();
                 answerButton3.Content = testowy[2].getPolish();
-
             }
 
             if (languageside == 1)
@@ -186,21 +156,15 @@ namespace NaukaSlowekObcych
                 wordLabel.Content = testowy[wordwelookingfor].getPolish();
                 rightword = testowy[wordwelookingfor].getEnglish();
 
-
                 answerButton1.Content = testowy[0].getEnglish();
                 answerButton2.Content = testowy[1].getEnglish();
                 answerButton3.Content = testowy[2].getEnglish();
-
             }
-
-            
         }
 
-        public void Level1()
+        private void Level1()
         {
             //poziom z 2ma przyciskami
-
-
             Random rnd = new Random();
             int wordwelookingfor;
             wordwelookingfor = rnd.Next(0, 2);
@@ -209,16 +173,13 @@ namespace NaukaSlowekObcych
             answer = new MixAnswers(answer);
             List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
 
-            
             if (languageside == 0)
             {
                 wordLabel.Content = testowy[wordwelookingfor].getEnglish();
                 rightword = testowy[wordwelookingfor].getPolish();
 
-
                 answerButton1.Content = testowy[0].getPolish();
                 answerButton2.Content = testowy[1].getPolish();
-
             }
 
             if (languageside == 1)
@@ -226,18 +187,12 @@ namespace NaukaSlowekObcych
                 wordLabel.Content = testowy[wordwelookingfor].getPolish();
                 rightword = testowy[wordwelookingfor].getEnglish();
 
-
                 answerButton1.Content = testowy[0].getEnglish();
                 answerButton2.Content = testowy[1].getEnglish();
-
             }
-
-
-            
-
         }
 
-       public  void Level5() 
+       private void Level5() 
        {
             Random rnd = new Random();
             int wordwelookingfor;
@@ -249,16 +204,13 @@ namespace NaukaSlowekObcych
             rightword = listforanswer[wordwelookingfor].getEnglish();
 
             answer = new HideLetters(answer);
-
-
             List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
-            
 
             answerTextBox.Text = testowy[wordwelookingfor].getEnglish();
             wordLabel.Content = testowy[wordwelookingfor].getPolish();
        }
 
-        public void LevelTest()
+        private void LevelTest()
         {
             Random rnd = new Random();
             int wordwelookingfor;
@@ -286,24 +238,19 @@ namespace NaukaSlowekObcych
 
         private void buttonAnswerClick(object sender, RoutedEventArgs e)
         {
-
             Button button = (Button)sender;
 
             if(button.Content.ToString() == rightword && flag == 4)
             {
-                checklabel.Content = "Super !";
                 Level4();
             } else if (button.Content.ToString() == rightword && flag == 3)
             {
-                checklabel.Content = "Super 2";
                 Level3();
             } else if (button.Content.ToString() == rightword && flag == 2)
             {
-                checklabel.Content = "Super 2";
                 Level2();
             } else if (button.Content.ToString() == rightword && flag == 1)
             {
-                checklabel.Content = "Super 1";
                 Level1();
             }
 
@@ -316,8 +263,6 @@ namespace NaukaSlowekObcych
                 LevelTest();
             }
         }
-
-        
 
         private void learnButtonClick(object sender, RoutedEventArgs e)
         {
@@ -336,12 +281,10 @@ namespace NaukaSlowekObcych
             answerTextBox.Visibility = Visibility.Hidden;
             checkButton.Visibility = Visibility.Hidden;
             runLvlAgainLabel.Visibility = Visibility.Hidden;
-
         }
 
         private void testButtonClick(object sender, RoutedEventArgs e)
         {
-
             welcomeGrid.Visibility = Visibility.Hidden;
             learnGrid.Visibility = Visibility.Hidden;
 
@@ -351,8 +294,79 @@ namespace NaukaSlowekObcych
             pkt = 0;
             automaticrun = 0;
             LevelTest();
-
         }
+
+        private void setLvl1Visibility()
+        {
+            answerButton1.Visibility = Visibility.Visible;
+            answerButton2.Visibility = Visibility.Visible;
+            answerButton3.Visibility = Visibility.Hidden;
+            answerButton4.Visibility = Visibility.Hidden;
+            answerButton5.Visibility = Visibility.Hidden;
+
+            answerTextBox.Visibility = Visibility.Hidden;
+            checkButton.Visibility = Visibility.Hidden;
+
+            runLvlAgainLabel.Visibility = Visibility.Hidden;
+        }
+
+        private void setLvl2Visibility()
+        {
+            answerButton1.Visibility = Visibility.Visible;
+            answerButton2.Visibility = Visibility.Visible;
+            answerButton3.Visibility = Visibility.Visible;
+            answerButton4.Visibility = Visibility.Hidden;
+            answerButton5.Visibility = Visibility.Hidden;
+
+            answerTextBox.Visibility = Visibility.Hidden;
+            checkButton.Visibility = Visibility.Hidden;
+
+            runLvlAgainLabel.Visibility = Visibility.Hidden;
+        }
+
+        private void setLvl3Visibility()
+        {
+            answerButton1.Visibility = Visibility.Visible;
+            answerButton2.Visibility = Visibility.Visible;
+            answerButton3.Visibility = Visibility.Visible;
+            answerButton4.Visibility = Visibility.Visible;
+            answerButton5.Visibility = Visibility.Hidden;
+
+            answerTextBox.Visibility = Visibility.Hidden;
+            checkButton.Visibility = Visibility.Hidden;
+
+            runLvlAgainLabel.Visibility = Visibility.Hidden;
+        }
+
+        private void setLvl4Visibility()
+        {
+            answerButton1.Visibility = Visibility.Visible;
+            answerButton2.Visibility = Visibility.Visible;
+            answerButton3.Visibility = Visibility.Visible;
+            answerButton4.Visibility = Visibility.Visible;
+            answerButton5.Visibility = Visibility.Visible;
+
+            answerTextBox.Visibility = Visibility.Hidden;
+            checkButton.Visibility = Visibility.Hidden;
+
+            runLvlAgainLabel.Visibility = Visibility.Hidden;
+        }
+
+        private void setLvl5Visibility()
+        {
+            answerButton1.Visibility = Visibility.Hidden;
+            answerButton2.Visibility = Visibility.Hidden;
+            answerButton3.Visibility = Visibility.Hidden;
+            answerButton4.Visibility = Visibility.Hidden;
+            answerButton5.Visibility = Visibility.Hidden;
+
+            answerTextBox.Visibility = Visibility.Visible;
+            checkButton.Visibility = Visibility.Visible;
+
+            runLvlAgainLabel.Visibility = Visibility.Hidden;
+        }
+
+
         private void levelButtonClick(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
@@ -362,76 +376,31 @@ namespace NaukaSlowekObcych
 
             if (button.Name == lvl1Button.Name)
             {
-                answerButton1.Visibility = Visibility.Visible;
-                answerButton2.Visibility = Visibility.Visible;
-                answerButton3.Visibility = Visibility.Hidden;
-                answerButton4.Visibility = Visibility.Hidden;
-                answerButton5.Visibility = Visibility.Hidden;
-
-                answerTextBox.Visibility = Visibility.Hidden;
-                checkButton.Visibility = Visibility.Hidden;
-
-                runLvlAgainLabel.Visibility = Visibility.Hidden;
+                setLvl1Visibility();
 
                 flag = 1;
                 Level1();
             } else if (button.Name == lvl2Button.Name)
             {
-                answerButton1.Visibility = Visibility.Visible;
-                answerButton2.Visibility = Visibility.Visible;
-                answerButton3.Visibility = Visibility.Visible;
-                answerButton4.Visibility = Visibility.Hidden;
-                answerButton5.Visibility = Visibility.Hidden;
-
-                answerTextBox.Visibility = Visibility.Hidden;
-                checkButton.Visibility = Visibility.Hidden;
-
-                runLvlAgainLabel.Visibility = Visibility.Hidden;
+                setLvl2Visibility();
 
                 flag = 2;
                 Level2();
             } else if (button.Name == lvl3Button.Name)
             {
-                answerButton1.Visibility = Visibility.Visible;
-                answerButton2.Visibility = Visibility.Visible;
-                answerButton3.Visibility = Visibility.Visible;
-                answerButton4.Visibility = Visibility.Visible;
-                answerButton5.Visibility = Visibility.Hidden;
-
-                answerTextBox.Visibility = Visibility.Hidden;
-                checkButton.Visibility = Visibility.Hidden;
-
-                runLvlAgainLabel.Visibility = Visibility.Hidden;
+                setLvl3Visibility();
 
                 flag = 3;
                 Level3();
             } else if (button.Name == lvl4Button.Name)
             {
-                answerButton1.Visibility = Visibility.Visible;
-                answerButton2.Visibility = Visibility.Visible;
-                answerButton3.Visibility = Visibility.Visible;
-                answerButton4.Visibility = Visibility.Visible;
-                answerButton5.Visibility = Visibility.Visible;
-
-                answerTextBox.Visibility = Visibility.Hidden;
-                checkButton.Visibility = Visibility.Hidden;
-
-                runLvlAgainLabel.Visibility = Visibility.Hidden;
+                setLvl4Visibility();
 
                 flag = 4;
                 Level4();
             } else if (button.Name == lvl5Button.Name)
             {
-                answerButton1.Visibility = Visibility.Hidden;
-                answerButton2.Visibility = Visibility.Hidden;
-                answerButton3.Visibility = Visibility.Hidden;
-                answerButton4.Visibility = Visibility.Hidden;
-                answerButton5.Visibility = Visibility.Hidden;
-
-                answerTextBox.Visibility = Visibility.Visible;
-                checkButton.Visibility = Visibility.Visible;
-
-                runLvlAgainLabel.Visibility = Visibility.Hidden;
+                setLvl5Visibility();
 
                 flag = 5;
                 Level5();
@@ -454,11 +423,8 @@ namespace NaukaSlowekObcych
 
         private void checkButtonClick(object sender, RoutedEventArgs e)
         {
-            //answerTextBox.Text = " ";
-
             if (answerTextBox.Text.ToString() == rightword)
             {
-                answerTextBox.Text = " ";
                 Level5();
             }
         }
@@ -473,8 +439,6 @@ namespace NaukaSlowekObcych
 
         private void addWordButton_Click(object sender, RoutedEventArgs e)
         {
-            IPolaczenie polaczenie = WordStorage.GetPolaczenie();
-
             if (string.IsNullOrWhiteSpace(polishWordTextBox.Text) && string.IsNullOrWhiteSpace(englishWordTextBox.Text))
             { } else 
             {
@@ -486,18 +450,12 @@ namespace NaukaSlowekObcych
 
         private void deleteWordButton_Click(object sender, RoutedEventArgs e)
         {
-            IPolaczenie polaczenie = WordStorage.GetPolaczenie();
-
             Word word = (Word)wordListComboBox.SelectedItem;
             polaczenie.remove(word);
-
-
         }
 
         private void manageWordButton_Click(object sender, RoutedEventArgs e)
         {
-            IPolaczenie polaczenie = WordStorage.GetPolaczenie();
-
             List<Word> words = new List<Word>();
 
             for (int i = 0; i < polaczenie.lenght(); i++)
@@ -506,15 +464,12 @@ namespace NaukaSlowekObcych
             }
             wordListComboBox.ItemsSource = words;
 
-
             welcomeGrid.Visibility = Visibility.Hidden;
             baseGrid.Visibility = Visibility.Visible;
-
         }
 
         private void editWordButton_Click(object sender, RoutedEventArgs e)
         {
-            IPolaczenie polaczenie = WordStorage.GetPolaczenie();
             Word word = (Word)wordListComboBox.SelectedItem;
 
             if (string.IsNullOrWhiteSpace(polishWordTextBox.Text) && string.IsNullOrWhiteSpace(englishWordTextBox.Text))

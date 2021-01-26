@@ -10,7 +10,6 @@ namespace NaukaSlowekObcych
     {
         public MixAnswers(AnswerInterface answerInterface) : base(answerInterface)
         {
-
         }
         public override List<Word> generateAnswerList(IPolaczenie polaczenie)
         {

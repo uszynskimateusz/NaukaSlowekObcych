@@ -10,7 +10,6 @@ namespace NaukaSlowekObcych
     {
         protected AnswerInterface _answerInterface;
 
-
         public AnswerDecorator(AnswerInterface answerInterface)
         {
             _answerInterface = answerInterface;
@@ -20,6 +19,5 @@ namespace NaukaSlowekObcych
         {
             return _answerInterface.generateAnswerList(polaczenie);
         }
-
     }
 }

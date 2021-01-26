@@ -9,7 +9,6 @@ namespace NaukaSlowekObcych
     class Answer : AnswerInterface
     {
        List<Word> answers = new List<Word>();
-
        public override List<Word> generateAnswerList(IPolaczenie polaczenie)
         {            
             for (int i = 0; i < polaczenie.lenght(); i++)

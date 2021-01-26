@@ -9,7 +9,6 @@ namespace NaukaSlowekObcych
     class Language
     {
         private IState state;
-
         public Language(IState state)
         {
             this.state = state;

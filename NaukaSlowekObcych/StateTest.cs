@@ -10,7 +10,6 @@ namespace NaukaSlowekObcych
     {
         public override int GetPoint()
         {
-            //tu jesli if prawdziwy np slowo nauczone to wtedy stan sie zmieni
             return 0;
         }
     }
