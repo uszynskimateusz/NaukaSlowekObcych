@@ -21,7 +21,6 @@ namespace NaukaSlowekObcych
     public partial class MainWindow : Window
     {
         String rightword;
-        int languageside = 0;
         int flag = 0;
         int automaticrun = 0;
         int pkt = 0;
@@ -68,7 +67,7 @@ namespace NaukaSlowekObcych
                 i++;
             }
                
-            if (languageside == 0)
+            if (language.GetPoint() == 0)
             {
                 wordLabel.Content = testowy[wordwelookingfor].english;
                 rightword = testowy[wordwelookingfor].polish;
@@ -78,7 +77,7 @@ namespace NaukaSlowekObcych
                 answerButton3.Content = testowy[2].polish;
                 answerButton4.Content = testowy[3].polish;
                 answerButton5.Content = testowy[4].polish;
-            } else if(languageside == 1)
+            } else if(language.GetPoint() == 1)
             {
                 wordLabel.Content = testowy[wordwelookingfor].polish;
                 rightword = testowy[wordwelookingfor].english;
@@ -104,7 +103,7 @@ namespace NaukaSlowekObcych
             List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
 
             
-            if (languageside == 0)
+            if (language.GetPoint() == 0)
             {
                 wordLabel.Content = testowy[wordwelookingfor].english;
                 rightword = testowy[wordwelookingfor].polish;
@@ -115,7 +114,7 @@ namespace NaukaSlowekObcych
                 answerButton4.Content = testowy[3].polish;
             }
 
-            if (languageside == 1)
+            if (language.GetPoint() == 1)
             {
                 wordLabel.Content = testowy[wordwelookingfor].polish;
                 rightword = testowy[wordwelookingfor].english;
@@ -138,7 +137,7 @@ namespace NaukaSlowekObcych
             answer = new MixAnswers(answer);
             List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
 
-            if (languageside == 0)
+            if (language.GetPoint() == 0)
             {
                 wordLabel.Content = testowy[wordwelookingfor].english;
                 rightword = testowy[wordwelookingfor].polish;
@@ -149,7 +148,7 @@ namespace NaukaSlowekObcych
                 answerButton3.Content = testowy[2].polish;
             }
 
-            if (languageside == 1)
+            if (language.GetPoint() == 1)
             {
                 wordLabel.Content = testowy[wordwelookingfor].polish;
                 rightword = testowy[wordwelookingfor].english;
@@ -171,7 +170,7 @@ namespace NaukaSlowekObcych
             answer = new MixAnswers(answer);
             List<Word> testowy = new List<Word>(answer.generateAnswerList(polaczenie));
 
-            if (languageside == 0)
+            if (language.GetPoint() == 0)
             {
                 wordLabel.Content = testowy[wordwelookingfor].english;
                 rightword = testowy[wordwelookingfor].polish;
@@ -180,7 +179,7 @@ namespace NaukaSlowekObcych
                 answerButton2.Content = testowy[1].polish;
             }
 
-            if (languageside == 1)
+            if (language.GetPoint() == 1)
             {
                 wordLabel.Content = testowy[wordwelookingfor].polish;
                 rightword = testowy[wordwelookingfor].english;
@@ -417,14 +416,12 @@ namespace NaukaSlowekObcych
         {
             language.ChangeState(new StateEnglish());
             runLvlAgainLabel.Visibility = Visibility.Visible;
-            languageside = language.GetPoint();
         }
 
         private void languageEnglishClick(object sender, RoutedEventArgs e)
         {
             language.ChangeState(new StatePolish());
             runLvlAgainLabel.Visibility = Visibility.Visible;
-            languageside = language.GetPoint();
         }
 
         private void checkButtonClick(object sender, RoutedEventArgs e)
