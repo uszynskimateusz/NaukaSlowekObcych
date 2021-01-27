@@ -5,23 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NaukaSlowekObcych"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid x:Name="welcomeGrid" Visibility="Visible">
-            
-            <Grid.RowDefinitions >
-                <RowDefinition Height="250" />
-                <RowDefinition Height="auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions >
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-            </Grid.ColumnDefinitions>
-            
-            <Label x:Name="welcomeLabel" Content="Witaj w nauce słówek&#xD;&#xA;  wybierz tryb programu&#xD;&#xA;" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Top" Width="232" Height="82" FontSize="18" Grid.Row="0" Grid.ColumnSpan="2"/>
-            <Button x:Name="learnButton" Content="Nauka" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="75" Click="learnButtonClick" Grid.Row="1" Grid.Column="0"/>
-            <Button x:Name="testButton" Content="Test" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="75" Click="testButtonClick" Grid.Row="1" Grid.Column="1"/>
-            <Button x:Name="manageWordButton" Content="Baza" HorizontalAlignment="Left" Margin="5,66,0,-55" VerticalAlignment="Top" Width="75" Grid.Row="1" Grid.Column="1" Click="manageWordButton_Click"/>
+            <Label x:Name="welcomeLabel" Content=" Witaj w nauce słówek&#xA;wybierz tryb programu&#xA;" HorizontalAlignment="Center" Margin="303,81,257,0" VerticalAlignment="Top" Width="232" Height="82" FontSize="18" />
+            <Button x:Name="learnButton" Content="Nauka" HorizontalAlignment="Left" Margin="236,163,0,0" VerticalAlignment="Top" Width="75" Click="learnButtonClick" RenderTransformOrigin="5.003,9.033" />
+            <Button x:Name="testButton" Content="Test" HorizontalAlignment="Left" Margin="348,163,0,0" VerticalAlignment="Top" Width="75" Click="testButtonClick" />
+            <Button x:Name="manageWordButton" Content="Baza" HorizontalAlignment="Left" Margin="460,163,0,0" VerticalAlignment="Top" Width="75"  Click="manageWordButton_Click"/>
         </Grid>
 
         <Grid x:Name="learnGrid" Visibility="Hidden">
@@ -60,12 +50,13 @@
             <Button x:Name="answerTestButton4" Content="Button" HorizontalAlignment="Left" Margin="442,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
             <Button x:Name="answerTestButton5" Content="Button" HorizontalAlignment="Left" Margin="573,286,0,0" VerticalAlignment="Top" Width="75" Click="buttonAnswerClick"/>
 
-            <Label x:Name="sentenceTestLabel" Content="Jaki to wyraz :" HorizontalAlignment="Left" Margin="69,193,0,0" VerticalAlignment="Top" FontSize="14"/>
-            <Label x:Name="wordTestLabel" Content="Label" HorizontalAlignment="Left" Margin="169,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.972,-2.338" Width="92" FontSize="14"/>
+            <Label x:Name="sentenceTestLabel" Content="Jaki to wyraz :" HorizontalAlignment="Left" Margin="286,174,0,0" VerticalAlignment="Top" FontSize="14"/>
+            <Label x:Name="wordTestLabel" Content="Label" HorizontalAlignment="Left" Margin="386,174,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.972,-2.338" Width="92" FontSize="14"/>
 
             <Button x:Name="backTestButton" Content="Powrót" HorizontalAlignment="Left" Margin="664,340,0,0" VerticalAlignment="Top" Width="75" Click="backButtonClick" />
 
             <Label x:Name="checkTestLabel" Content="" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="122"/>
+
         </Grid>
 
 
@@ -79,17 +70,18 @@
             <TextBox x:Name="englishWordTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="239,147,0,0"/>
             <Label x:Name="messagePolishBaseLabel" Content="Wprowadź słowo po polsku&#xD;&#xA;" HorizontalAlignment="Left" Margin="50,105,0,0" VerticalAlignment="Top" Height="27" RenderTransformOrigin="0.334,-4.585"/>
             <Label x:Name="messageEnglishBaseLabel" Content="Wprowadź słowo po angielsku&#xA;" HorizontalAlignment="Left" Margin="50,147,0,0" VerticalAlignment="Top" Height="27"/>
-            <ComboBox x:Name="wordListComboBox" HorizontalAlignment="Left" Margin="50,195,0,0" VerticalAlignment="Top" Width="216" RenderTransformOrigin="-0.279,-0.76" DisplayMemberPath="polish" />
+            <ComboBox x:Name="wordListComboBox" HorizontalAlignment="Left" Margin="239,189,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.279,-0.76" DisplayMemberPath="polish" />
             <Label Content="Aby dodać uzuepłnij pola" HorizontalAlignment="Left" Margin="514,109,0,0" VerticalAlignment="Top" Width="206"/>
             <Label Content="Aby edytować uzupełnij pola i wybierz &#xD;&#xA;edytowane słowo z listy&#xD;&#xA;" HorizontalAlignment="Left" Margin="514,140,0,0" VerticalAlignment="Top" Width="256" Height="44"/>
             <Label Content="Aby usunąć wybierz słowo z listy&#xD;&#xA;" HorizontalAlignment="Left" Margin="514,189,0,0" VerticalAlignment="Top" Width="194"/>
+            <Label Content="Lista słówek" HorizontalAlignment="Left" Margin="50,185,0,0" VerticalAlignment="Top" Width="157"/>
 
 
 
         </Grid>
 
 
-     
-       
+
+
     </Grid>
 </Window>

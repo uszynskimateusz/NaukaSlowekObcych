@@ -230,8 +230,16 @@ namespace NaukaSlowekObcych
             automaticrun++;
             if (automaticrun == 6)
             {
-                checkTestLabel.Content = "Twoje punkty: " + pkt;
-            }
+                MessageBoxResult result = MessageBox.Show("Twoje punkty: " + pkt, "Wynik testu");
+
+                switch (result)
+                {
+                    case MessageBoxResult.OK:
+                        testGrid.Visibility = Visibility.Hidden;
+                        welcomeGrid.Visibility = Visibility.Visible;
+                        break;
+                }
+             }
         }
 
         private void buttonAnswerClick(object sender, RoutedEventArgs e)
@@ -478,6 +486,11 @@ namespace NaukaSlowekObcych
             }
             polishWordTextBox.Text = " ";
             englishWordTextBox.Text = " ";
+        }
+
+        private void messageBoxButtonClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hello, world!");
         }
     }
 }
