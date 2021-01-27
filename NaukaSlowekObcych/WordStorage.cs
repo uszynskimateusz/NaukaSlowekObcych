@@ -64,10 +64,10 @@ namespace NaukaSlowekObcych
             {
                 foreach(Word oldWord in wordStorage.words)
                 {
-                    if (oldWord.getPolish() == word.getPolish() && oldWord.getEnglish() == word.getEnglish())
+                    if (oldWord.polish == word.polish && oldWord.english == word.english)
                     {
-                        oldWord.setPolish(newWord.getPolish());
-                        oldWord.setEnglish(newWord.getEnglish());
+                        oldWord.polish = newWord.polish;
+                        oldWord.english = newWord.english;
                         wordStorage.databaseFacade.editWord(oldWord, newWord);
                     }
                 }

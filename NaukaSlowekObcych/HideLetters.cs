@@ -17,7 +17,7 @@ namespace NaukaSlowekObcych
 
             foreach ( Word item in answerhidden)
             {      
-                item.setEnglish(item.getEnglish().Remove(1));
+                item.english = item.english.Remove(1);
             }
 
             return answerhidden;

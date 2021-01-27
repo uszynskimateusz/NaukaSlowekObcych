@@ -14,7 +14,7 @@ namespace NaukaSlowekObcych
 
             for (int i = 0; i < polaczenie.lenght(); i++)
             {
-                Word word = new Word(polaczenie.get(i).getPolish(), polaczenie.get(i).getEnglish());
+                Word word = new Word(polaczenie.get(i).polish, polaczenie.get(i).english);
                 answers.Add(word);
             }
             return answers;

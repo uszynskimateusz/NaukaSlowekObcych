@@ -22,8 +22,8 @@ namespace NaukaSlowekObcych
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = @"INSERT INTO Word(polish,english) VALUES(@param,@param2)";
 
-                    cmd.Parameters.AddWithValue("@param", word.getPolish());
-                    cmd.Parameters.AddWithValue("@param2", word.getEnglish());
+                    cmd.Parameters.AddWithValue("@param", word.polish);
+                    cmd.Parameters.AddWithValue("@param2", word.english);
 
                     try
                     {
@@ -48,10 +48,10 @@ namespace NaukaSlowekObcych
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = @"UPDATE Word SET polish = @param, english = @param2 Where polish = @param3 and english = @param4";
 
-                    cmd.Parameters.AddWithValue("@param", editWord.getPolish());
-                    cmd.Parameters.AddWithValue("@param2", editWord.getEnglish());
-                    cmd.Parameters.AddWithValue("@param3", word.getPolish());
-                    cmd.Parameters.AddWithValue("@param4", word.getEnglish());
+                    cmd.Parameters.AddWithValue("@param", editWord.polish);
+                    cmd.Parameters.AddWithValue("@param2", editWord.english);
+                    cmd.Parameters.AddWithValue("@param3", word.polish);
+                    cmd.Parameters.AddWithValue("@param4", word.english);
 
                     try
                     {
@@ -92,7 +92,7 @@ namespace NaukaSlowekObcych
                 using (SqlConnection con = new SqlConnection(sqlConnectionString))
                 {
                     con.Open();
-                    using (SqlCommand command = new SqlCommand("DELETE FROM Word WHERE polish = '" + word.getPolish() + "' AND english = '" + word.getEnglish() + "'", con))
+                    using (SqlCommand command = new SqlCommand("DELETE FROM Word WHERE polish = '" + word.polish + "' AND english = '" + word.english + "'", con))
                     {
                         command.ExecuteNonQuery();
                     }
