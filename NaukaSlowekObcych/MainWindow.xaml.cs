@@ -40,7 +40,7 @@ namespace NaukaSlowekObcych
 
             polaczenie = WordStorage.GetPolaczenie();
 
-            language = new Language(new StateTest());
+            language = new Language(new StatePolish());
         }
 
        private void Level4()
@@ -415,14 +415,14 @@ namespace NaukaSlowekObcych
 
         private void languagePolishClick(object sender, RoutedEventArgs e)
         {
-            language.ChangeState(new StateLearn());
+            language.ChangeState(new StateEnglish());
             runLvlAgainLabel.Visibility = Visibility.Visible;
             languageside = language.GetPoint();
         }
 
         private void languageEnglishClick(object sender, RoutedEventArgs e)
         {
-            language.ChangeState(new StateTest());
+            language.ChangeState(new StatePolish());
             runLvlAgainLabel.Visibility = Visibility.Visible;
             languageside = language.GetPoint();
         }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace NaukaSlowekObcych
 {
-    class StateTest : IState
+    class StateEnglish : IState
     {
         public override int GetPoint()
         {
-            return 0;
+            return 1;
         }
     }
 }

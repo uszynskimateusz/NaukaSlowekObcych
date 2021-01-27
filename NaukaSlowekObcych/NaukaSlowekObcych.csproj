@@ -55,20 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Answer.cs" />
-    <Compile Include="AnswerDecorator.cs" />
-    <Compile Include="AnswerInterface.cs" />
-    <Compile Include="DatabaseFacade.cs" />
-    <Compile Include="EntityFramework.cs" />
-    <Compile Include="HideLetters.cs" />
-    <Compile Include="IPolaczenie.cs" />
-    <Compile Include="IState.cs" />
-    <Compile Include="Language.cs" />
-    <Compile Include="MixAnswers.cs" />
-    <Compile Include="StateLearn.cs" />
-    <Compile Include="StateTest.cs" />
-    <Compile Include="Word.cs" />
-    <Compile Include="WordStorage.cs" />
+    <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\Decorator\AnswerDecorator.cs" />
+    <Compile Include="Models\Decorator\AnswerInterface.cs" />
+    <Compile Include="Models\Facade\DatabaseFacade.cs" />
+    <Compile Include="Models\Facade\EntityFramework.cs" />
+    <Compile Include="Models\Decorator\HideLetters.cs" />
+    <Compile Include="Models\Singleton\IPolaczenie.cs" />
+    <Compile Include="Models\State\IState.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\Decorator\MixAnswers.cs" />
+    <Compile Include="Models\State\StateEnglish.cs" />
+    <Compile Include="Models\State\StatePolish.cs" />
+    <Compile Include="Models\Word.cs" />
+    <Compile Include="Models\Singleton\WordStorage.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View + Controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
